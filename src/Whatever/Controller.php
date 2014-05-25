@@ -20,19 +20,19 @@ class Controller {
 	
     public function novo() {
 	$postFilter = array(
-        'nome' => FILTER_SANITIZE_STRING,
-        'diretor' => FILTER_SANITIZE_STRING,
-        'genero' => FILTER_SANITIZE_STRING
-    );
+            'nome' => FILTER_SANITIZE_STRING,
+            'diretor' => FILTER_SANITIZE_STRING,
+            'genero' => FILTER_SANITIZE_STRING
+        );
 
-    $post = array_filter( filter_var_array($_POST, $postFilter));
+        $post = array_filter( filter_var_array($_POST, $postFilter));
 
-    $filme = new Filme();
-    $filme->setDiretor($post['diretor']);
-    $filme->setNome($post['nome']);
-    $filme->setGenero($post['genero']);
+        $filme = new Filme();
+        $filme->setDiretor($post['diretor']);
+        $filme->setNome($post['nome']);
+        $filme->setGenero($post['genero']);
 
-	return $this->create($filme);
+        return $this->create($filme);
     }
 
     public  function lista() {

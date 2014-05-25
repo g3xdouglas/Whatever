@@ -11,6 +11,7 @@ namespace Whatever\Dao;
 use PDO;
 use Whatever\Model\Filme;
 use Whatever\Dao\DataAccess;
+
 class FilmeDao implements DataAccess {
 
     private $pdo;
@@ -28,18 +29,17 @@ class FilmeDao implements DataAccess {
         ');
     }
 
-   	public function insert(Filme $filme) {
-
-		$stm = $this->pdo->prepare(
+    public function insert(Filme $filme) {
+        $stm = $this->pdo->prepare(
             'INSERT INTO filmes(
-				nome,
-				diretor,
-				genero
-			) VALUES (
-				:nome,
-				:diretor,
-				:genero
-			);'
+		nome,
+		diretor,
+		genero
+		) VALUES (
+		    :nome,
+		    :diretor,
+                    :genero
+                );'
         );
 
         $stm->bindValue(':nome', $filme->getNome(), PDO::PARAM_STR);
@@ -49,11 +49,10 @@ class FilmeDao implements DataAccess {
         if ($stm->execute()){
             return  $this->pdo->lastInsertId();
         }
-		throw new \RuntimeException('erro ao cadastrar o filme!');
+        throw new \RuntimeException('erro ao cadastrar o filme!');
     }
 
-	
-	public function getAll() {
+    public function getAll() {
         $stm = $this->pdo->prepare('
             SELECT * FROM filmes;
         ');
@@ -63,15 +62,12 @@ class FilmeDao implements DataAccess {
         if ($stm->execute()) {
             return $stm->fetchAll();
         }
-	}
+    }
 	
-	public function delete() {
-	
-	}
+    public function delete() {
+    }
 	
     public function getById($id) {
+    }
 	
-	}
-	
-
 }

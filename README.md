@@ -1,4 +1,0 @@
-Whatever
-========
-
-Programando qualquer coisa 

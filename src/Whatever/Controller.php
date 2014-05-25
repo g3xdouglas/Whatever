@@ -5,7 +5,6 @@
  * Date: 24/05/14
  * Time: 20:22
  */
-
 namespace Whatever;
 
 use Whatever\Dao\FilmeDao;
@@ -28,13 +27,12 @@ class Controller {
 
         $post = array_filter( filter_var_array($_POST, $postFilter));
 
-			$filme = new Filme();
-			$filme->setDiretor($post['diretor']);
-			$filme->setNome($post['nome']);
-			$filme->setGenero($post['genero']);
+		$filme = new Filme();
+		$filme->setDiretor($post['diretor']);
+		$filme->setNome($post['nome']);
+		$filme->setGenero($post['genero']);
 
-			return $this->create($filme);
-
+		return $this->create($filme);
     }
 
     public  function lista() {

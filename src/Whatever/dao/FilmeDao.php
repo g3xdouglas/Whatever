@@ -9,10 +9,9 @@
 namespace Whatever\Dao;
 
 use PDO;
-
 use Whatever\Model\Filme;
-
-class FilmeDao {
+use Whatever\Dao\DataAccess;
+class FilmeDao implements DataAccess {
 
     private $pdo;
 

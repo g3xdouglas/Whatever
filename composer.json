@@ -1,0 +1,12 @@
+{
+    "name": "vendor/Whatever",
+    "description": "Programando qualquer coisa que vier na cabeça",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Douglas Duarte ",
+            "email": "douglasg3x@gmail.com"
+        }
+    ]
+}

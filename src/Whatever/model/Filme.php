@@ -11,7 +11,7 @@ use Whatever\Model\Entity;
 
 class Filme implements Entity {
 	
-	private $nome;
+    private $nome;
     private $diretor;
     private $genero;
 

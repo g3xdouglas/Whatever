@@ -1,3 +1,4 @@
+
 {
     "name": "Whatever",
     "description": "Programando qualquer coisa que vier na cabeça",
@@ -8,5 +9,10 @@
             "name": "Douglas Duarte ",
             "email": "douglasg3x@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    }
 }

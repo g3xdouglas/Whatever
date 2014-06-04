@@ -9,8 +9,9 @@ namespace Whatever\Model;
 
 use Whatever\Model\Entity;
 
-class Filme implements Entity {
-	
+class Filme implements Entity
+{
+
     private $nome;
     private $diretor;
     private $genero;
@@ -18,40 +19,48 @@ class Filme implements Entity {
     /**
      * @return string
      */
-    public function getNome() {
+    public function getNome()
+    {
         return $this->nome;
     }
+
     /**
      * @return string
      */
-    public function getDiretor() {
+    public function getDiretor()
+    {
         return $this->diretor;
     }
 
     /**
      * @return string
      */
-    public function getGenero() {
+    public function getGenero()
+    {
         return $this->genero;
     }
 
     /**
      * @param string $nome
      */
-    public function setNome($nome) {
+    public function setNome($nome)
+    {
         $this->nome = $nome;
     }
+
     /**
      * @param string $diretor
      */
-    public function setDiretor($diretor) {
+    public function setDiretor($diretor)
+    {
         $this->diretor = $diretor;
     }
 
     /**
      * @param string $genero
      */
-    public function setGenero($genero) {
+    public function setGenero($genero)
+    {
         $this->genero = $genero;
     }
 }

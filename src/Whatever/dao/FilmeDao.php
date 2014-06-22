@@ -7,11 +7,10 @@
  */
 namespace Whatever\Dao;
 
-use PDO;
+use \PDO;
 use Whatever\Model\Entity;
-use Whatever\Model\Filme;
 
-class FilmeDao implements DataAccess
+class FilmeDao implements Crud
 {
 
     private $pdo;
@@ -47,7 +46,7 @@ class FilmeDao implements DataAccess
         throw new \RuntimeException('erro ao cadastrar o filme!');
     }
 
-    public function getAll()
+    public function findAll()
     {
         $stm = $this->pdo->prepare('
             SELECT * FROM filmes;
@@ -64,7 +63,7 @@ class FilmeDao implements DataAccess
     {
     }
 
-    public function getById($id)
+    public function findById($id)
     {
     }
 

@@ -1,14 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: douglas2
- * Date: 24/05/14
- * Time: 20:25
- */
+
 namespace Whatever\Model;
-
-use Whatever\Model\Entity;
-
 class Filme implements Entity
 {
 

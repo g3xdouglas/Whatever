@@ -1,4 +1,5 @@
 <?php
+
 namespace Whatever\Controller;
 
 use Whatever\Dao\FilmeDao;
@@ -38,6 +39,6 @@ class IndexController
 
     public function lista()
     {
-        return $this->dao->getAll();
+        return $this->dao->findAll();
     }
 }

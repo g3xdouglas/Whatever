@@ -9,9 +9,7 @@
             "email": "douglasg3x@gmail.com"
         }
     ],
-    "require": {
-    "phpunit/phpunit": "4.3.x-dev"
-    },
+    
     "autoload": {
         "psr-0": {
             "": "src/"

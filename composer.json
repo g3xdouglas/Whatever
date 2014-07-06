@@ -14,5 +14,9 @@
         "psr-0": {
             "": "src/"
         }
+    },
+    "require": {
+        "twig/twig": "1.6.5",
+        "doctrine/orm": "2.3.5"
     }
 }

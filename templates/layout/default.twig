@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    {% block head %}
+    <title>{% block title %}{% endblock title %} - Whatever</title>
+    {% endblock head %}
+</head>
+    <body>
+        <div id="content">
+            {% block content %}
+
+            {% endblock content %}
+        </div>
+        <div id="footer">
+            {% block footer %}
+            &copy; Copyright 2014 - whatever
+            {% endblock footer%}
+        </div>
+    </body>
+</html>

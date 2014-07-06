@@ -1,0 +1,23 @@
+{% extends "layout/default.twig" %}
+
+{% block title %} filmes {% endblock title %}
+
+{% block content %}
+
+    <h1>cadastro de filmes</h1>
+
+    <form method="post">
+        <pre>
+            <label>Nome</label>
+            <input type="text" name="nome" required/><br />
+            <label>Diretor</label>
+            <input type="text" name="diretor"required /><br />
+            <label>Genero</label>
+            <input type="text" name="genero" required/><br />
+            <input type="submit"  />
+        </pre>
+    </form>
+    {% include "list.twig" %}
+{% endblock content %}
+
+

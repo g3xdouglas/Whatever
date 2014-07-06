@@ -16,7 +16,7 @@ class FilmeDao implements Crud
 
         $this->pdo->exec('
             CREATE TABLE IF NOT EXISTS filmes (
-                id INTEGER PRIMARY KEY AUTO_INCREMENT,
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
                 nome TEXT NOT NULL,
                 diretor TEXT NOT NULL,
                 genero TEXT NOT NULL
@@ -47,7 +47,7 @@ class FilmeDao implements Crud
             SELECT * FROM filmes;
         ');
 
-        $stm->setFetchMode(PDO::FETCH_CLASS, 'Whatever\Model\Filme');
+        $stm->setFetchMode(PDO::FETCH_ASSOC);
 
         if ($stm->execute()) {
             return $stm->fetchAll();

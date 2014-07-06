@@ -4,10 +4,12 @@ namespace Whatever\Controller;
 
 use Whatever\Dao\FilmeDao;
 use Whatever\Model\Filme;
+use Whatever\View\View;
 
 class FilmeController
 {
     private $dao;
+    private $view;
 
     public function __construct(FilmeDao $dao)
     {
@@ -16,20 +18,26 @@ class FilmeController
 
     public function novo()
     {
-        $postFilter = array(
-            'nome'=> FILTER_SANITIZE_STRING,
-            'diretor' => FILTER_SANITIZE_STRING,
-            'genero' => FILTER_SANITIZE_STRING
-        );
+        if ($_POST) {
+            $postFilter = array(
+                'nome' => FILTER_SANITIZE_STRING,
+                'diretor' => FILTER_SANITIZE_STRING,
+                'genero' => FILTER_SANITIZE_STRING
+            );
 
-        $post = array_filter(filter_var_array($_POST, $postFilter));
+            $post = array_filter(filter_var_array($_POST, $postFilter));
 
-        $filme = new Filme();
-        $filme->setDiretor($post['diretor']);
-        $filme->setNome($post['nome']);
-        $filme->setGenero($post['genero']);
+            $filme = new Filme();
+            $filme->setDiretor($post['diretor']);
+            $filme->setNome($post['nome']);
+            $filme->setGenero($post['genero']);
 
-        return $this->salva($filme);
+            $this->salva($filme);
+
+        }
+        $this->view = new View();
+
+        $this->view->render('form.twig',  $this->lista());
     }
 
     public function salva(Filme $filme)

@@ -1,0 +1,15 @@
+<hr />
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Diretor </th>
+        <th>Genero</th>
+    </tr>
+    {% for f in filme %}
+    <tr>
+        <td>{{ f.nome }}</td>
+        <td>{{ f.diretor }}</td>
+        <td>{{ f.genero }}</td>
+    </tr>
+    {% endfor %}
+</table>

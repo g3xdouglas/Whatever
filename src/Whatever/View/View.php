@@ -7,8 +7,9 @@ class View
 {
     protected $vars;
     protected $twig;
-	public function __construct()
-	{
+    
+    public function __construct()
+    {
        Twig_Autoloader::register();
        $loader = new \Twig_Loader_Filesystem(TEMPLATE);
        $this->twig = new \Twig_Environment($loader, array(
@@ -16,7 +17,8 @@ class View
             'debug' => false
         ));
         $this->twig->addExtension(new \Twig_Extension_Debug());
-	}
+    }
+    
     public function render($file, $data)
     {
         if (isset($data) && is_array($data))

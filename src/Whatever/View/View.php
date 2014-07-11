@@ -3,7 +3,7 @@
 namespace Whatever\View;
 use Twig_Autoloader;
 
-class View
+class Twig
 {
     protected $vars;
     protected $twig;

@@ -21,9 +21,9 @@ class View
     
     public function render($file, $data)
     {
-        if (isset($data) && is_array($data))
+        if (isset($data) && is_array($data)) {
              $this->vars = ['filme' => $data];
-
+        }
         $this->twig->loadTemplate($file)->display($this->vars);
 
     }

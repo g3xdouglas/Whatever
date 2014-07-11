@@ -4,7 +4,7 @@ namespace Whatever\Controller;
 
 use Whatever\Dao\FilmeDao;
 use Whatever\Model\Filme;
-use Whatever\View\View;
+use Whatever\View\Twig;
 
 class FilmeController
 {
@@ -14,6 +14,7 @@ class FilmeController
     public function __construct(FilmeDao $dao)
     {
         $this->dao = $dao;
+                $this->view = new Twig();
     }
 
     public function novo()
@@ -32,17 +33,10 @@ class FilmeController
             $filme->setNome($post['nome']);
             $filme->setGenero($post['genero']);
 
-            $this->salva($filme);
-
+            $this->dao->insert($filme);
         }
-        $this->view = new View();
-
+        
         $this->view->render('form.twig',  $this->lista());
-    }
-
-    public function salva(Filme $filme)
-    {
-        return $this->dao->insert($filme);
     }
 
     public function lista()

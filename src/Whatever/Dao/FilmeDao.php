@@ -26,8 +26,8 @@ class FilmeDao implements Crud
 
     public function insert(Entity $filme)
     {
-        $sql = 'INSERT INTO filmes(nome, diretor, genero
-        ) VALUES (:nome, :diretor, :genero);';
+        $sql = 'INSERT INTO filmes(nome, diretor, genero)
+                VALUES (:nome, :diretor, :genero);';
 
         $stm = $this->pdo->prepare($sql);
 
@@ -43,11 +43,7 @@ class FilmeDao implements Crud
 
     public function findAll()
     {
-        $stm = $this->pdo->prepare('
-            SELECT * FROM filmes;
-        ');
-
-        $stm->setFetchMode(PDO::FETCH_ASSOC);
+        $stm = $this->pdo->prepare('SELECT * FROM filmes;');
 
         if ($stm->execute()) {
             return $stm->fetchAll();

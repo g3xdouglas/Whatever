@@ -11,15 +11,15 @@ class FilmeController
     private $dao;
     private $view;
 
-    public function __construct(FilmeDao $dao)
+    public function __construct(FilmeDao $dao, Twig $twig)
     {
         $this->dao = $dao;
-                $this->view = new Twig();
+        $this->view = $twig;
     }
 
     public function novo()
     {
-        if ($_POST) {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $postFilter = array(
                 'nome' => FILTER_SANITIZE_STRING,
                 'diretor' => FILTER_SANITIZE_STRING,

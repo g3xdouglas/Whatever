@@ -13,6 +13,8 @@ class Twig
        Twig_Autoloader::register();
        $loader = new \Twig_Loader_Filesystem(TEMPLATE);
        $this->twig = new \Twig_Environment($loader, array(
+            'autoescape' => 'html',
+            'charset' => 'UTF-8',
             'cache' => './tmp/cache',
             'debug' => false
         ));
